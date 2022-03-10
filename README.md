@@ -1,2 +1,2 @@
 # e-shop
-University project of creating an e-shop
+Jedná se o studentský projekt statické webové stránky.
