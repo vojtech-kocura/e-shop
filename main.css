@@ -1,0 +1,598 @@
+* { /*základní nastavení */
+  color: #333;
+  font-size: 1.4rem;
+  font-family: Tahoma, serif;
+  line-height: 1.4;
+  background-color: white;
+}
+
+@media only screen and (min-device-width:768px){
+  *{
+    font-size: 1rem;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  margin-left: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.grid_container { /* grid layout úvodní stránky */
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    'header header header'
+    'nav nav nav'
+    'main main main'
+    'footer footer footer';
+}
+
+.grid_header {
+  grid-area: header;
+  grid-row-start: 1;
+}
+
+.grid_nav {
+  grid-area: nav;
+  grid-row-start: 2;
+}
+
+.grid_main {
+  grid-area: main;
+  grid-row-start: 3;
+}
+
+.grid_footer {
+  grid-area: footer;
+  grid-row-start: 4;
+}
+
+.responsive img { /* Úvodní logo */
+  width: 80%;
+}
+
+@media only screen and (min-device-width: 768px){ /* Úvodní logo na PC */
+  .responsive img { width: 15%; }
+}
+
+footer p{
+  background-color: #A7D34F;
+}
+
+.menu {
+  background-color: #333;
+  overflow: hidden; /* oddělí menu od ostatních částí stránky */
+  width: 99%;
+}
+
+.menu a { /* nastavení prvků v menu */
+  float: left;
+  color: #A7D34F;
+  text-align: center;
+  padding: 1rem 1.1rem;
+  text-decoration: none; /* zabrání podtrhnutí textu */
+  font-size: 3.5rem;
+  background-color: #333;
+}
+
+@media only screen and (min-device-width: 768px){
+  .menu a {
+    font-size: 1.2rem;
+  }
+}
+
+.menu a:hover { /* změna po najetí myší */
+  background-color: #e67300;
+  color: black;
+}
+
+.banner_container { /* bannery na úvodní stránce */
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-device-width: 768px) {
+  .banner_container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 99%;
+  }
+}
+
+.banner_container img {
+  width: 100%;
+}
+
+.banner_item {
+  display: flex;
+  width: 99%;
+  border: groove;
+  margin-bottom: 3rem;
+}
+@media only screen and (min-device-width: 768px) {
+  .banner_item {
+    width: 30%;
+  }
+}
+
+
+.product_container { /*seznam produktů */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-device-width: 768px){ /*seznam produktů na PC */
+  .product_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.product_item_rakety, .product_item_mice, .product_item_obuv { /*konkrétní produkt */
+  display:flex;
+  justify-content: center;
+  border-style: groove;
+  width: 80%;
+  height: 24rem;
+  padding: 1rem;
+  align-items: flex-end;
+}
+
+.product_item_rakety {
+  height: 30rem;
+}
+
+@media only screen and (min-device-width: 768px){ /*konkrétní produkt na PC */
+  .product_item_rakety {
+    width: 28%;
+    height: 30rem;
+  }
+  .product_item_obuv {
+    width: 28%;
+    height: 24rem;
+  }
+  .product_item_mice {
+    width: 28%;
+    height: 22.5rem;
+  }
+}
+
+.product_item_rakety img, .product_item_mice img, .product_item_obuv img {
+  width: 12.5rem;
+  margin-right: 1rem;
+}
+
+.btn-koupit { /*tlačítko nákupu */
+  display: block;
+  background-color: #A7D34F;
+  cursor:pointer;
+  text-align: center;
+  font-size: 2rem;
+  width: 10rem;
+  height: 5rem;
+  line-height: 5rem;
+  text-decoration: none;
+  float: right;
+  box-shadow: .05rem .05rem .25rem #222;
+  border-radius: 4px;
+  margin-top: 25px;
+}
+
+@media only screen and (min-device-width: 768px){ /*tlačítko nákupu na PC */
+  .btn-koupit{
+    width: 7rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    line-height: 3rem;
+  }
+}
+
+
+.btn-koupit:hover {
+  position: relative;
+  top: .05rem;
+  left: .05rem;
+  box-shadow: none;
+  color: black;
+  background-color: #e67300;
+}
+
+
+
+
+.detail_container { /* kontejner pro detail produktu */
+  display: flex;
+  justify-content: center;
+}
+
+.detail, .detail_mice { /*detail produktu */
+  display: flex;
+  width: 90%;
+  padding: 2rem;
+  border: groove;
+  text-align: justify; /*zarovnání do bloku */
+}
+
+.detail img, .detail_mice img {
+  width: 45%;
+}
+
+@media only screen and (min-device-width: 768px) {
+  .detail_mice{
+    width: 55%;
+    display: flex;
+    align-items: flex-end;
+  }
+  .detail img, .detail_mice img {
+    float: left;
+    width: 30%;
+    align-items: flex-end;
+  }
+}
+
+.btn-detail { /* tlačítko pro zobrazení detailu produktu */
+  display: block;
+  background-color: lightgrey;
+  cursor:pointer;
+  text-align: center;
+  font-size: 2rem;
+  width: 10rem;
+  height: 5rem;
+  line-height: 5rem;
+  text-decoration: none;
+  float: left;
+  box-shadow: .05rem .05rem .25rem #222;
+  border-radius: 4px;
+  margin-top: 25px;
+}
+
+@media only screen and (min-device-width: 768px){ /*tlačítko nákupu na PC */
+  .btn-detail {
+    width: 7rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    float: right;
+  }
+}
+
+.btn-detail:hover{
+  position: relative;
+  top: .05rem;
+  left: .05rem;
+  box-shadow: none;
+  color: black;
+  background-color: grey;
+}
+
+.btn-zpet { /* tlačítko "zpět" z detailu produktu */
+  display: block;
+  background-color: lightgrey;
+  cursor:pointer;
+  text-align: center;
+  font-size: 2rem;
+  width: 8rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-decoration: none;
+  float: right;
+  box-shadow: .05rem .05rem .25rem #222;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 1.1rem;
+  margin-right: 1.2rem;
+}
+
+@media only screen and (min-device-width: 768px) {
+  .btn-zpet {
+    width: 6rem;
+    height: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin-top: 1.6rem;
+  }
+}
+
+.btn-zpet:hover {
+  position: relative;
+  top: .05rem;
+  left: .05rem;
+  box-shadow: none;
+  color: black;
+  background-color: grey;
+}
+
+
+
+
+
+.kosik_container { /* kontejner pro košík */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kosik_item {  /* produkty v košíku */
+  display:flex;
+  justify-content: space-between;
+  border-style: groove;
+  width: 80%;
+  height: 8rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+@media only screen and (min-device-width: 768px){
+  .kosik_item {
+    width: 40%;
+  }
+}
+
+.kosik_container img { /* velikost ikon v košíku */
+  width: 15%;
+}
+
+@media only screen and (min-device-width: 768px){
+  .kosik_container img {
+    width: 17%;
+  }
+}
+
+.kosik_logo img {
+  float: right;
+  width: 15%;
+  padding-top: 1.5rem;
+}
+
+@media only screen and (min-device-width: 768px) {
+  .kosik_logo img {
+    width: 4%;
+    padding-top: 1px;
+    padding-right: 1rem;
+  }
+}
+
+.tlacitka { /* stylování tlačítek "pokračovat v nákupu" a "k objednávce" */
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-objednavka { /* tlačítko přejít k objednávce z košíku */
+  display: block;
+  background-color: #A7D34F;
+  cursor:pointer;
+  text-align: center;
+  font-size: 2rem;
+  width: 15rem;
+  height: 7rem;
+  line-height: 7rem;
+  text-decoration: none;
+  float: right;
+  box-shadow: .05rem .05rem .25rem #222;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+@media only screen and (min-device-width: 768px){
+  .btn-objednavka {
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    line-height: 3rem;
+  }
+}
+
+.btn-objednavka:hover {
+  position: relative;
+  top: .05rem;
+  left: .05rem;
+  box-shadow: none;
+  color: black;
+  background-color: #e67300;
+}
+
+.btn-pokracovatvnakupu { /* tlačítko pokračovat v nákupu z košíku */
+  display: block;
+  background-color: lightgrey;
+  cursor:pointer;
+  text-align: center;
+  font-size: 2rem;
+  width: 15rem;
+  height: 7rem;
+  line-height: 3.5rem;
+  text-decoration: none;
+  float: right;
+  box-shadow: .05rem .05rem .25rem #222;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+@media only screen and (min-device-width: 768px){
+  .btn-pokracovatvnakupu {
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    line-height: 3rem;
+  }
+}
+
+.btn-pokracovatvnakupu:hover {
+  position: relative;
+  top: .05rem;
+  left: .05rem;
+  box-shadow: none;
+  color: black;
+  background-color: grey;
+}
+
+.celkova_cena p{ /* celková cena za produkty v košíku */
+  font-size: 2.3rem;
+}
+
+strong {
+  font-size: 2.3rem; /* obarvení celkové ceny */
+  color: red;
+}
+
+
+
+
+
+.faktura { /* formulář s fakturačními údaji */
+  text-align: left;
+  margin-left: 2rem;
+}
+
+.faktura label {
+  font-size: 2rem;
+}
+.faktura input {
+  width: 90%;
+  background-color: lightgrey;
+  height: 4.5rem;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-device-width: 768px) {
+  .faktura {
+    text-align: center;
+  }
+  .faktura input {
+    height: 1.5rem;
+    width: 15rem;
+    margin-bottom: 0.5rem;
+  }
+  .faktura label {
+    font-size: 1rem;
+  }
+}
+
+.doprava_platba { /* výběr způsobu dopravy a platby */
+  display: grid;
+  text-align: center;
+  grid-template-columns: auto;
+  grid-template-rows: 25% 25% 25%;
+}
+
+@media only screen and (min-device-width: 768px) {
+  .doprava_platba {
+    grid-template-rows: 21% 21% 21%;
+  }
+  .doprava, .platba {
+    justify-content: center;
+  }
+}
+
+.doprava { /*formulář dopravy */
+  display: grid;
+  height: 5rem;
+}
+
+.platba { /* formulář platby */
+  display: grid;
+}
+
+.doprava label, .platba label { /* pole pro výběr dopravy a platby */
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+@media only screen and (min-device-width: 768px) {
+  .doprava label, .platba label {
+    font-size: 1rem;
+  }
+}
+
+.osobni_odber, .adresa, .posta, .karta, .prevod, .prevzeti { /* vzhled jednotlivých možností dopravy a platby */
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  border: ridge;
+  width: 100%;
+  height: 6rem;
+}
+
+@media only screen and (min-device-width: 768px){
+  .osobni_odber, .adresa, .posta, .karta, .prevod, .prevzeti {
+    height: 3rem;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.osobni_odber input, .adresa input, .posta input, .karta input, .prevod input, .prevzeti input { /*velikost radio button*/
+  height: 15rem;
+  width: 3rem;
+  margin: 2rem;
+}
+
+@media only screen and (min-device-width: 768px) {
+  .osobni_odber input, .adresa input, .posta input, .karta input, .prevod input, .prevzeti input {
+    height: 1rem;
+    width: 1rem;
+    margin: 1rem;
+  }
+}
+
+span { /* text ve výběru typu dopravy */
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: red;
+}
+
+@media only screen and (min-device-width: 768px) {
+  span {
+    font-size: 1rem;
+  }
+}
+
+.btn-potvrdit, .btn-dokoncit { /* tlačítka pro potvrzení fakturačních údajů a způsobu platby */
+  margin: 3rem auto;
+  display:block;
+  background-color: #A7D34F;
+  cursor:pointer;
+  text-align: center;
+  width: 16rem;
+  height: 5rem;
+  line-height: 5rem;
+  text-decoration: none;
+  box-shadow: .05rem .05rem .25rem #222;
+  border-radius: 4px;
+  left:0;
+  right:0;
+}
+
+@media only screen and (min-device-width: 768px) {
+  .btn-potvrdit, .btn-dokoncit {
+    height: 3rem;
+    line-height: 3rem;
+    margin-top: 2rem;
+  }
+}
+
+.btn-potvrdit:hover, .btn-dokoncit:hover {
+  position: relative;
+  top: .05rem;
+  left: .05rem;
+  box-shadow: none;
+  color: black;
+  background-color: #e67300;
+}
+
+.podekovani, .drobeckova_navigace {
+  text-align:center;
+}
+
+header {
+  display: flex;
+  width: 98.5%;
+}
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doprava a platba</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <a href="index.html" class="responsive"> <img src="logopc.png" alt="Logo obchodu"> </a>
+    <a href="kosik.html" class="kosik_logo"> <img src="kosik_logo_polozky.png" alt="Košík s produkty"> </a>
+
+  <nav class="menu">
+    <a href="rakety.html" title="Zobrazení raket">Rakety</a>
+    <a href="obuv.html" title="Zobrazení obuvi">Obuv</a>
+    <a href="mice.html" title="Zobrazení míčů">Míče</a>
+  </nav>
+
+  <div class="drobeckova_navigace">
+    <p> <a href="kosik.html" title="Zpět na košík">1. Košík</a> ► <a href="faktura.html" title="Zpět na fakturační údaje">2. Fakturační údaje</a> ► <b>3. Doprava a platba</b></p>
+  </div>
+
+  <div class="doprava_platba">
+
+    <h1>Zvolte způsob dopravy</h1>
+
+      <div class="doprava">
+        <div class="osobni_odber">
+          <input type="radio" id="osobniodber" name="doprava">
+          <label for="osobniodber">Osobní odběr - <span>Zdarma</span> </label>
+        </div>
+
+        <div class="adresa">
+          <input type="radio" id="doruceni" name="doprava">
+          <label for="doruceni">Doručení na adresu - <span>89 Kč</span></label>
+        </div>
+
+        <div class="posta">
+          <input type="radio" id="posta" name="doprava">
+          <label for="posta">Doručení na poštu - <span>59 Kč</span></label>
+        </div>
+      </div>
+
+  <h1>Zvolte způsob platby</h1>
+
+    <div class="platba">
+        <div class="karta">
+          <input type="radio" id="karta" name="platba">
+          <label for="karta">Online kartou</label>
+       </div>
+
+          <div class="prevod">
+            <input type="radio" id="prevod" name="platba">
+           <label for="prevod">Online převod</label>
+          </div>
+
+       <div class="prevzeti">
+        <input type="radio" id="prevzeti" name="platba">
+        <label for="prevzeti">Při převzetí</label>
+        </div>
+      <a class="btn-dokoncit" href="podekovani.html" title="Závazně potvrdit objednávku">Potvrdit objednávku</a>
+    </div>
+
+    <div>
+      <footer>
+        <p>Jedná se pouze o studentský projekt České zemědělské univerzity v Praze. Autorem webové stránky je Vojtěch Kocura a grafiky Marie Jane Janoušková.</p>
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>
